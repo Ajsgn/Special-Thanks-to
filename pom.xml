@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!-- 2019-03-12 11:57:15 by Generator2 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!-- 2019-03-12 11:57:15 by Generator2 --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>cn.ajsgn</groupId>
@@ -95,6 +93,12 @@
 			<artifactId>ons-client</artifactId>
 			<version>1.8.0.Final</version>
 		</dependency>
+		
+		<dependency>
+		  <groupId>com.rabbitmq</groupId>
+		  <artifactId>amqp-client</artifactId>
+		  <version>5.1.2</version>
+		</dependency>
 
 
 	</dependencies>
@@ -142,5 +146,6 @@
 
 	<modules>
 		<module>spring-plugin-AliRocketMQ</module>
-	</modules>
+    <module>spring-plugin-RabbitMQ</module>
+  </modules>
 </project>

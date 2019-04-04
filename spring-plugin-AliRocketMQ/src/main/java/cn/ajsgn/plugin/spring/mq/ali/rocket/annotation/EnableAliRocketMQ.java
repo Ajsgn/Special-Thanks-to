@@ -23,14 +23,13 @@ import java.lang.annotation.Target;
 
 import org.springframework.context.annotation.Import;
 
-import cn.ajsgn.plugin.spring.mq.ali.rocket.AliRocketMQEvent;
-import cn.ajsgn.plugin.spring.mq.ali.rocket.AliRocketMQPlugin;
-import cn.ajsgn.plugin.spring.mq.ali.rocket.AliRocketMQTopicCenter;
+import cn.ajsgn.plugin.spring.mq.ali.rocket.event.AliRocketMQEvent;
+import cn.ajsgn.plugin.spring.mq.ali.rocket.plugin.AliRocketMQPlugin;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Import({AliRocketMQPlugin.class, AliRocketMQTopicCenter.class, AliRocketMQEvent.class})
+@Import({AliRocketMQPlugin.class, AliRocketMQEvent.class})
 /**
  * <p>启动aliRocketMQ服务注解</p>
  * @ClassName: EnableAliRocketMQ
