@@ -34,7 +34,7 @@ if ($_POST) {
                         $str .= "账号分区累计充值增加成功！";
                     }
                     if ($type == 'allch1') {
-                        $DB->get_row("UPDATE `cly_user` SET `allch`=`allch`+'{$money}' WHERE uid='{$userinfo['uid']}'");
+                        $DB->get_row("UPDATE `cly_users` SET `allch`=`allch`+'{$money}' WHERE uid='{$userinfo['uid']}'");
                         $str .= "账号累计充值增加成功！";
                     }
                     if ($type == 'viptime') {
