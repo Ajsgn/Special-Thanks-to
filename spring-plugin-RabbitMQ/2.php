@@ -147,7 +147,7 @@ if ($_POST['type']) {
             exit(json_encode($return));
             break;
         case 'rolenum':
-            $cmd = $flag2 . 'java -classpath .' . $flag . 'jmxc.jar Clients ' . $port . ' ' . $uid . ' rolenum';
+            $cmd = $flag2 . 'java -jar jmxc.jar "" "" "127.0.0.1" "' . $port . '" "gm" "userId=4096" "roleId=' . $uid . '" "rolenum"';
             exec($cmd, $out);
             $return = array(
                 'errcode' => 0,
@@ -158,7 +158,7 @@ if ($_POST['type']) {
             break;
         case 'gmcmd':
             $gmcmd = str_replace(" ", "#", $_POST['gmcmd']);
-            $cmd = $flag2 . 'java -classpath .' . $flag . 'jmxc.jar Clients ' . $port . ' ' . $uid . ' ' . $gmcmd;
+            $cmd = $flag2 . 'java -jar jmxc.jar "" "" "127.0.0.1" "' . $port . '" "gm" "userId=4096" "roleId=' . $uid . '" "'. $gmcmd .'"';
             exec($cmd, $out);
             $return = array(
                 'errcode' => 0,
@@ -168,7 +168,7 @@ if ($_POST['type']) {
             exit(json_encode($return));
             break;
         case 'updateshield':
-            $cmd = $flag2 . 'java -classpath .' . $flag . 'jmxc.jar Clients ' . $port . ' ' . $uid . ' updateshield';
+            $cmd = $flag2 . 'java -jar jmxc.jar "" "" "127.0.0.1" "' . $port . '" "gm" "userId=4096" "roleId=' . $uid . '" "updateshield"';
             exec($cmd, $out);
             $return = array(
                 'errcode' => 0,
@@ -178,7 +178,7 @@ if ($_POST['type']) {
             exit(json_encode($return));
             break;
         case 'updatenotclear':
-            $cmd = $flag2 . 'java -classpath .' . $flag . 'jmxc.jar Clients ' . $port . ' ' . $uid . ' updatenotclear';
+            $cmd = $flag2 . 'java -jar jmxc.jar "" "" "127.0.0.1" "' . $port . '" "gm" "userId=4096" "roleId=' . $uid . '" "updatenotclear"';
             exec($cmd, $out);
             $return = array(
                 'errcode' => 0,
@@ -191,7 +191,7 @@ if ($_POST['type']) {
             $equipid = $_POST['equipid'];
             $skillid = $_POST['skillid'];
             $effectid = $_POST['effectid'];
-            $cmd = $flag2 . "java -classpath ." . $flag . "jmxc.jar Clients " . $port . " " . $uid . " addsequip#" . $equipid . "#" . $effectid . "#" . $skillid;
+            $cmd = $flag2 . 'java -jar jmxc.jar "" "" "127.0.0.1" "' . $port . '" "gm" "userId=4096" "roleId=' . $uid . '" "addsequip#'. $equipid . "#" . $effectid . "#" . $skillid.'"';
             exec($cmd, $out);
             $return = array(
                 'errcode' => 0,
@@ -541,7 +541,7 @@ if ($_POST['type']) {
             $mailct = $_POST["mailct"];
             $levelmin = $_POST["levelmin"];
             $levelmax = $_POST["levelmax"];
-            $cmd = $flag2 . "java -classpath ." . $flag . "jmxc.jar Clients " . $port . " " . $uid . " mailbycond#GM#" . $mailct . "#" . $times . "#" . $itemid . $flag1 . "|" . $num . "#1" . $flag1 . "|" . $levelmin . $flag1 . "|" . $levelmax;
+            $cmd = $flag2 . "java -classpath ." . $flag . "gsxdb.jar Clients " . $port . " " . $uid . " mailbycond#GM#" . $mailct . "#" . $times . "#" . $itemid . $flag1 . "|" . $num . "#1" . $flag1 . "|" . $levelmin . $flag1 . "|" . $levelmax;
             //$cmd=$flag2.'java -cp jmxc.jar "" "" "127.0.0.1" "'.$port.'" "gm" "userId=4096" "roleId='.$uid.'" "mailbycond GM 全服邮件 0 '.$itemid.'|'.$num.' 1|10|100" ';
             ////mailbycond 邮件标题 邮件内容 有效时间默认填0 奖励多个用逗号1|100,2|100 领取邮件的条件1|10|100
             exec($cmd, $out);
@@ -576,7 +576,7 @@ if ($_POST['type']) {
             $locale = 'en_US.UTF-8';
             setlocale(LC_ALL, $locale);
             putenv('LC_ALL=' . $locale);
-            $cmd = $flag2 . "java -classpath ." . $flag . "jmxc.jar Clients " . $port . " " . $uid . " zmd#" . $notice;
+            $cmd = $flag2 . "java -classpath ." . $flag . "gsxdb.jar Clients " . $port . " " . $uid . " zmd#" . $notice;
             exec($cmd, $out);
             $return = array(
                 'errcode' => 0,
@@ -590,7 +590,7 @@ if ($_POST['type']) {
             $locale = 'en_US.UTF-8';
             setlocale(LC_ALL, $locale);
             putenv('LC_ALL=' . $locale);
-            $cmd = $flag2 . "java -classpath ." . $flag . "jmxc.jar Clients " . $port . " " . $uid . " tc#" . $notice;
+            $cmd = $flag2 . "java -classpath ." . $flag . "gsxdb.jar Clients " . $port . " " . $uid . " tc#" . $notice;
             exec($cmd, $out);
             $return = array(
                 'errcode' => 0,
@@ -605,7 +605,7 @@ if ($_POST['type']) {
             $locale = 'en_US.UTF-8';
             setlocale(LC_ALL, $locale);
             putenv('LC_ALL=' . $locale);
-            $cmd = $flag2 . "java -classpath ." . $flag . "jmxc.jar Clients " . $port . " " . $uid . " ggg#start#" . $jiange . "#" . $notice;
+            $cmd = $flag2 . "java -classpath ." . $flag . "gsxdb.jar Clients " . $port . " " . $uid . " ggg#start#" . $jiange . "#" . $notice;
             exec($cmd, $out);
             $return = array(
                 'errcode' => 0,
@@ -618,7 +618,7 @@ if ($_POST['type']) {
             $locale = 'en_US.UTF-8';
             setlocale(LC_ALL, $locale);
             putenv('LC_ALL=' . $locale);
-            $cmd = $flag2 . "java -classpath ." . $flag . "jmxc.jar Clients " . $port . " " . $uid . " ggg#stop";
+            $cmd = $flag2 . "java -classpath ." . $flag . "gsxdb.jar Clients " . $port . " " . $uid . " ggg#stop";
             exec($cmd, $out);
             $return = array(
                 'errcode' => 0,
