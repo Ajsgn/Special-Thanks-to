@@ -632,7 +632,7 @@ if ($_POST['type']) {
             exec($cmd, $out);
             $return = array(
                 'errcode' => 0,
-                'info' => '封号成功'
+                'info' => '封号成功',
 				'cmd' => $cmd,
             );
             exit(json_encode($return));
@@ -643,7 +643,7 @@ if ($_POST['type']) {
             exec($cmd, $out);
             $return = array(
                 'errcode' => 0,
-                'info' => '解封成功'
+                'info' => '解封成功',
 				'cmd' => $cmd,
             );
             exit(json_encode($return));
